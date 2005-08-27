@@ -1,4 +1,4 @@
-# $Rev: 3410 $, $Date: 2005-08-15 12:17:57 $
+# $Rev: 3410 $, $Date: 2005-08-27 17:42:47 $
 #
 Summary:	xphelloworld application
 Summary(pl):	Aplikacja xphelloworld
@@ -16,7 +16,7 @@ BuildRequires:	automake
 BuildRequires:	xorg-lib-libXaw-devel
 BuildRequires:	xorg-lib-libXprintAppUtil-devel
 BuildRequires:	xorg-util-util-macros
-BuildRequires:	pkg-config
+BuildRequires:	pkgconfig >= 0.19
 BuildRoot:	%{tmpdir}/xphelloworld-%{version}-root-%(id -u -n)
 
 %define		_prefix		/usr/X11R6
