@@ -1,0 +1,11 @@
+--- xphelloworld-0.99.1/configure.ac.orig	2005-10-19 02:47:56.000000000 +0000
++++ xphelloworld-0.99.1/configure.ac	2005-10-22 14:37:34.000000000 +0000
+@@ -45,6 +45,8 @@
+    build_motifapps=no
+ fi
+ 
++PKG_PROG_PKG_CONFIG
++
+ if [[ -z $motif_libs ]] ; then
+    PKG_CHECK_MODULES(X11, x11)
+    AC_CHECK_LIB(Xm, XmFontListCreate, build_motifapps=no, [$X11])
