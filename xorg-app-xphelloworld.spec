@@ -16,7 +16,7 @@ URL:		http://xorg.freedesktop.org/
 BuildRequires:	autoconf >= 2.57
 BuildRequires:	automake
 %{?with_motif:BuildRequires:	motif-devel}
-BuildRequires:	pkgconfig >= 0.19
+BuildRequires:	pkgconfig >= 1:0.19
 BuildRequires:	xorg-lib-libXaw-devel
 BuildRequires:	xorg-lib-libXprintAppUtil-devel
 BuildRequires:	xorg-util-util-macros
