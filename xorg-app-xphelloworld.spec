@@ -1,16 +1,21 @@
+#
+# Conditional build:
+%bcond_without	motif	# don't build Motif apps
+#
 Summary:	xphelloworld application
 Summary(pl):	Aplikacja xphelloworld
 Name:		xorg-app-xphelloworld
-Version:	0.99.0
-Release:	0.02
+Version:	0.99.1
+Release:	0.1
 License:	MIT
 Group:		X11/Applications
-Source0:	http://xorg.freedesktop.org/X11R7.0-RC0/app/xphelloworld-%{version}.tar.bz2
-# Source0-md5:	aeaf1b305d49eb084dc8bf6becc3cfad
-Patch0:		xphelloworld-man.patch
+Source0:	http://xorg.freedesktop.org/releases/X11R7.0-RC1/app/xphelloworld-%{version}.tar.bz2
+# Source0-md5:	b643d0a97b3492272475c4dd36e0b328
+Patch0:		xorg-xphelloworld-pkgconfig.patch
 URL:		http://xorg.freedesktop.org/
-BuildRequires:	autoconf
+BuildRequires:	autoconf >= 2.57
 BuildRequires:	automake
+%{?with_motif:BuildRequires:	motif-devel}
 BuildRequires:	pkgconfig >= 0.19
 BuildRequires:	xorg-lib-libXaw-devel
 BuildRequires:	xorg-lib-libXprintAppUtil-devel
@@ -32,7 +37,8 @@ Aplikacja xphelloworld.
 %{__autoconf}
 %{__autoheader}
 %{__automake}
-%configure
+%configure \
+	%{!?with_motif:--without-motif-libraries}
 
 %{__make}
 
@@ -47,5 +53,6 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
+%doc ChangeLog
 %attr(755,root,root) %{_bindir}/*
 %{_mandir}/man1/*.1*
