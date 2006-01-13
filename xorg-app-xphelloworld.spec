@@ -5,12 +5,12 @@
 Summary:	xphelloworld application
 Summary(pl):	Aplikacja xphelloworld
 Name:		xorg-app-xphelloworld
-Version:	0.99.1
+Version:	1.0.1
 Release:	0.1
 License:	MIT
 Group:		X11/Applications
-Source0:	http://xorg.freedesktop.org/releases/X11R7.0-RC1/app/xphelloworld-%{version}.tar.bz2
-# Source0-md5:	b643d0a97b3492272475c4dd36e0b328
+Source0:	http://xorg.freedesktop.org/releases/X11R7.0/src/app/xphelloworld-%{version}.tar.bz2
+# Source0-md5:	5c7fd1e35dd63089229e357c46e4f407
 Patch0:		xorg-xphelloworld-pkgconfig.patch
 URL:		http://xorg.freedesktop.org/
 BuildRequires:	autoconf >= 2.57
@@ -18,6 +18,7 @@ BuildRequires:	automake
 %{?with_motif:BuildRequires:	motif-devel}
 BuildRequires:	pkgconfig >= 1:0.19
 BuildRequires:	xorg-lib-libXaw-devel
+BuildRequires:	xorg-lib-libXp-devel
 BuildRequires:	xorg-lib-libXprintAppUtil-devel
 BuildRequires:	xorg-util-util-macros
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -53,6 +54,6 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc ChangeLog
+%doc COPYING ChangeLog
 %attr(755,root,root) %{_bindir}/*
 %{_mandir}/man1/*.1*
