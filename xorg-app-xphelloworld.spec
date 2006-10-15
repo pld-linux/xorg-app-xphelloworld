@@ -6,10 +6,10 @@ Summary:	xphelloworld application
 Summary(pl):	Aplikacja xphelloworld
 Name:		xorg-app-xphelloworld
 Version:	1.0.1
-Release:	0.1
+Release:	1
 License:	MIT
 Group:		X11/Applications
-Source0:	http://xorg.freedesktop.org/releases/X11R7.0/src/app/xphelloworld-%{version}.tar.bz2
+Source0:	http://xorg.freedesktop.org/releases/individual/app/xphelloworld-%{version}.tar.bz2
 # Source0-md5:	5c7fd1e35dd63089229e357c46e4f407
 Patch0:		xorg-xphelloworld-pkgconfig.patch
 URL:		http://xorg.freedesktop.org/
@@ -55,5 +55,15 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc COPYING ChangeLog
-%attr(755,root,root) %{_bindir}/*
-%{_mandir}/man1/*.1*
+%attr(755,root,root) %{_bindir}/xphelloworld
+%attr(755,root,root) %{_bindir}/xpsimplehelloworld
+%attr(755,root,root) %{_bindir}/xpxthelloworld
+%{_mandir}/man1/xphelloworld.1*
+%{_mandir}/man1/xpsimplehelloworld.1*
+%{_mandir}/man1/xpxthelloworld.1*
+%if %{with motif}
+%attr(755,root,root) %{_bindir}/xpawhelloworld
+%attr(755,root,root) %{_bindir}/xpxmhelloworld
+%{_mandir}/man1/xpawhelloworld.1*
+%{_mandir}/man1/xpxmhelloworld.1*
+%endif
