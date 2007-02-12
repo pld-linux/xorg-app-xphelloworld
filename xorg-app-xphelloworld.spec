@@ -3,7 +3,7 @@
 %bcond_without	motif	# don't build Motif apps
 #
 Summary:	xphelloworld application
-Summary(pl.UTF-8):   Aplikacja xphelloworld
+Summary(pl.UTF-8):	Aplikacja xphelloworld
 Name:		xorg-app-xphelloworld
 Version:	1.0.1
 Release:	1
